@@ -7,10 +7,13 @@ var htmlmin = require('gulp-htmlmin');
 var eslint = require('gulp-eslint');
 var autoprefixer = require('autoprefixer');
 var minify = require('gulp-htmlmin');
+var argv = require('yargs').argv;
 
 gulp.task('build', function() {
   var styles = processInline();
   var scripts = processInline();
+
+  var debug = (argv.debug === undefined) ? false : true;
 
   return gulp.src(['src/*.html'])
     .pipe(inlineSource({
@@ -43,8 +46,8 @@ gulp.task('build', function() {
       caseSensitive: true,
       keepClosingSlash: true,
       customAttrAssign: [/\$=/],
-      minifyCSS: true,
-      minifyJS: true
+      minifyCSS: !debug,
+      minifyJS: !debug
     }))
 
     .pipe(gulp.dest('.'));
