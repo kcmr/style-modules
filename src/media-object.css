@@ -1,8 +1,82 @@
 :root {
+  --grid-gap-size: 8px;
   --media-object-spacing: calc(2 * var(--grid-gap-size));
 }
 
 /* Default: horizonal media + body */
+/*---
+title: Media Object
+
+`.media-object` class can be applied to any element.
+
+__Horizontal (default)__
+
+```example:html
+  <div class="media-object">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id molestiae itaque, doloremque, repudiandae dicta aspernatur iure fugit. Et atque quod id deleniti aperiam? Libero delectus, culpa debitis quod dicta veritatis!
+    </div>
+  </div>
+```
+
+__Horizontal reversed__
+
+```example:html
+  <div class="media-object--reverse">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis inventore, dignissimos natus officia aut ducimus quaerat at nisi. Numquam reiciendis laborum illum reprehenderit sed eveniet totam commodi, optio? Veniam, repellat?
+    </div>
+  </div>
+```
+
+__Vertical__
+
+```example:html
+  <div class="media-object--vertical">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis inventore, dignissimos natus officia aut ducimus quaerat at nisi. Numquam reiciendis laborum illum reprehenderit sed eveniet totam commodi, optio? Veniam, repellat?
+    </div>
+  </div>
+```
+
+__Vertical reversed__
+
+```example:html
+  <div class="media-object--vertical media-object--reversed">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis inventore, dignissimos natus officia aut ducimus quaerat at nisi. Numquam reiciendis laborum illum reprehenderit sed eveniet totam commodi, optio? Veniam, repellat?
+    </div>
+  </div>
+```
+
+__Vertical centering__
+
+```example:html
+  <div class="media-object media-object--center">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id molestiae itaque, doloremque, repudiandae dicta aspernatur iure fugit. Et atque quod id deleniti aperiam? Libero delectus, culpa debitis quod dicta veritatis!
+    </div>
+  </div>
+```
+
+__Horizontal centering__
+
+```example:html
+  <div class="media-object--vertical media-object--center">
+    <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
+    <div class="media-object__body">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id molestiae itaque, doloremque, repudiandae dicta aspernatur iure fugit. Et atque quod id deleniti aperiam? Libero delectus, culpa debitis quod dicta veritatis!
+    </div>
+  </div>
+```
+
+*/
+
 .media-object,
 [class*="media-object--"] {
   display: flex;
