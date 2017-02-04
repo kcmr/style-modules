@@ -1,0 +1,62 @@
+:root {
+  --media-object-spacing: calc(2 * var(--grid-gap-size));
+}
+
+/* Default: horizonal media + body */
+.media-object,
+[class*="media-object--"] {
+  display: flex;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.media-object {
+  &__media {
+    margin-right: var(--media-object-spacing);
+  }
+
+  &__body {
+    flex: 1;
+  }
+
+  /* horizontal body + media */
+  &--reverse {
+    flex-direction: row-reverse;
+
+    .media-object__media {
+      margin-right: 0;
+      margin-left: var(--media-object-spacing);
+    }
+  }
+
+  /* vertical media + body */
+  &--vertical {
+    flex-direction: column;
+
+    .media-object__media {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: var(--media-object-spacing);
+    }
+  }
+
+
+  /* vertical reversed body + media */
+  &--vertical&--reverse {
+    flex-direction: column-reverse;
+  }
+
+  &--vertical&--reverse {
+    .media-object__media {
+      margin-right: 0;
+      margin-bottom: 0;
+      margin-top: var(--media-object-spacing);
+    }
+  }
+
+
+  /* cross axis alignment */
+  &--center {
+    align-items: center;
+  }
+}
