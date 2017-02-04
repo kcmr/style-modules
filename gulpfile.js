@@ -8,6 +8,7 @@ var eslint = require('gulp-eslint');
 var autoprefixer = require('autoprefixer');
 var minify = require('gulp-htmlmin');
 var argv = require('yargs').argv;
+var rename = require('gulp-rename');
 
 gulp.task('build', function() {
   var styles = processInline();
@@ -31,10 +32,17 @@ gulp.task('build', function() {
     .pipe(styles.extract('style'))
     .pipe(postcss([
       require('precss')({}),
+      require('mdcss')({
+        examples: { css: ['../.tmp/css/media-object.css'] }
+      }),
       autoprefixer({
         browsers: ['last 2 versions']
       })
     ]))
+    .pipe(rename(function(path) {
+      path.extname = '.css'
+    }))
+    .pipe(gulp.dest('.tmp/css/'))
     .pipe(styles.restore())
 
     // HTML

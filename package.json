@@ -13,6 +13,8 @@
     "gulp-inline-source": "^2.1.0",
     "gulp-postcss": "^6.3.0",
     "gulp-process-inline": "^0.1.4",
+    "gulp-rename": "^1.2.2",
+    "mdcss": "1.5.2",
     "postcss-scss": "^0.4.0",
     "precss": "^1.4.0",
     "yargs": "^6.6.0"
