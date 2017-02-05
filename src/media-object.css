@@ -3,11 +3,20 @@
   --media-object-spacing: calc(2 * var(--grid-gap-size));
 }
 
-/* Default: horizonal media + body */
 /*---
 title: Media Object
 
 `.media-object` class can be applied to any element.
+
+In order to use it you must import the component first and add it's ID to the `include` attribute of your component `<style>` tag.
+If you are using the style module outside of a component, you will need to add `is="custom-style"` to the `<style>` tag.
+
+You can override any of the style properties used by the media-object classes inside your component styles.
+
+<pre><code>&lt;link rel=&quot;import&quot; href=&quot;../media-object.html&quot;&gt;
+&lt;style <mark>include=&quot;media-object-styles&quot;</mark>&gt;&lt;/style&gt;
+</code></pre>
+
 
 ## Horizontal (default)
 
@@ -81,9 +90,10 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
     </div>
   </div>
 ```
-
 */
 
+
+/* Default: horizonal media + body */
 .media-object,
 [class*="media-object--"] {
   display: flex;
