@@ -33,16 +33,17 @@ gulp.task('build', function() {
     .pipe(postcss([
       require('precss')({}),
       require('mdcss')({
-        examples: { css: ['../.tmp/css/media-object.css'] }
+        examples: { css: ['css-docs/media-object.css'] }
       }),
       autoprefixer({
-        browsers: ['last 2 versions']
+        browsers: ['last 2 versions'],
+        cascade: false
       })
     ]))
     .pipe(rename(function(path) {
       path.extname = '.css'
     }))
-    .pipe(gulp.dest('.tmp/css/'))
+    .pipe(gulp.dest('./styleguide/css-docs/'))
     .pipe(styles.restore())
 
     // HTML
