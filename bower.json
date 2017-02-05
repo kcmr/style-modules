@@ -7,7 +7,9 @@
     "polymer"
   ],
   "main": "style-modules.html",
-  "ignore": [],
+  "ignore": [
+    "styleguide/"
+  ],
   "dependencies": {
     "polymer": "Polymer/polymer#^1.6.0"
   },
