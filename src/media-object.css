@@ -9,7 +9,7 @@ title: Media Object
 
 `.media-object` class can be applied to any element.
 
-__Horizontal (default)__
+## Horizontal (default)
 
 ```example:html
   <div class="media-object">
@@ -20,7 +20,9 @@ __Horizontal (default)__
   </div>
 ```
 
-__Horizontal reversed__
+## Horizontal reversed
+
+Use the modifier class `media-object--reverse` to reverse the default direction (left to right).
 
 ```example:html
   <div class="media-object--reverse">
@@ -31,7 +33,10 @@ __Horizontal reversed__
   </div>
 ```
 
-__Vertical__
+## Vertical
+
+Use the modifier class `media-object--vertical` to change the default distribution axis (horizontal).
+
 
 ```example:html
   <div class="media-object--vertical">
@@ -42,10 +47,10 @@ __Vertical__
   </div>
 ```
 
-__Vertical reversed__
+## Vertical reversed
 
 ```example:html
-  <div class="media-object--vertical media-object--reversed">
+  <div class="media-object--vertical media-object--reverse">
     <img src="http://fakeimg.pl/60x60/00CED1/FFF/?text=IMG" class="media-object__media" alt="">
     <div class="media-object__body">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis inventore, dignissimos natus officia aut ducimus quaerat at nisi. Numquam reiciendis laborum illum reprehenderit sed eveniet totam commodi, optio? Veniam, repellat?
@@ -53,7 +58,9 @@ __Vertical reversed__
   </div>
 ```
 
-__Vertical centering__
+## Vertical centering
+
+The modifier class `media-object--center` can be used in horizontal or vertical mode to center items in the cross axis.
 
 ```example:html
   <div class="media-object media-object--center">
@@ -64,7 +71,7 @@ __Vertical centering__
   </div>
 ```
 
-__Horizontal centering__
+## Horizontal centering
 
 ```example:html
   <div class="media-object--vertical media-object--center">
