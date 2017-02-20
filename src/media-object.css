@@ -1,8 +1,3 @@
-:root {
-  --grid-gap-size: 8px;
-  --media-object-spacing: calc(2 * var(--grid-gap-size));
-}
-
 /*---
 title: Media Object
 
@@ -96,12 +91,17 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 /* Default: horizonal media + body */
 .media-object,
 [class*="media-object--"] {
+  --grid-gap-size: 8px;
+  --media-object-spacing: calc(2 * var(--grid-gap-size));
+
   display: flex;
   box-sizing: border-box;
   align-items: flex-start;
 }
 
 .media-object {
+
+
   &__media {
     margin-right: var(--media-object-spacing);
   }
