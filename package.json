@@ -15,6 +15,8 @@
     "gulp-process-inline": "^0.1.4",
     "gulp-rename": "^1.2.2",
     "mdcss": "1.5.2",
+    "mdcss-theme-github": "git+https://git@github.com/kcmr/mdcss-theme-github.git#gh-pages",
+    "postcss-custom-media": "^5.0.1",
     "postcss-scss": "^0.4.0",
     "precss": "^1.4.0",
     "yargs": "^6.6.0"
