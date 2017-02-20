@@ -6,11 +6,12 @@
     <title>Style Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="primer.css" rel="stylesheet"><link href="style.css" rel="stylesheet"><link href="octicons/octicons.css" rel="stylesheet">
-    <script>examples={"base":"","target":"_self","css":["css-docs/media-object.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:16px;position:static;width:auto"};</script>
+    <script>examples={"base":"","target":"_self","css":["css-docs/media-object.css"],"js":[],"bodyjs":[],"htmlcss":"background:none;border:0;clip:auto;display:block;height:auto;margin:0;padding:0;position:static;width:auto","bodycss":"font-family: sans-serif; font-size: 14px;"};</script>
     
+    <link rel="import" href="default-theme.html">
   </head>
   <body>
-    <header class="masthead" style="background-color: #4078c0;">
+    <header class="masthead" style="background-color: #607D8B;">
       <div class="container">
         <a href="/" class="masthead-logo">
           <img src="mdcss-logo.png" alt="Style Guide" height="32"> Style Guide
@@ -108,14 +109,13 @@ If you are using the style module outside of a component, you will need to add <
         </main>
       </div>
       <footer class="footer">
-        Last modified Sunday, 5 February 2017 20:24
+        Last modified Monday, 20 February 2017 23:51
       </footer>
     </div>
     <script src="prism.js?871234"></script>
     <script src="examples.js?873428"></script>
     <script src="script.js?02359872"></script>
     <script src="anchor.min.js?225234"></script>
-    <script src="interact.min.js?8552934"></script>
     <script>
      anchors.options = {
          placement: 'left',
@@ -124,47 +124,6 @@ If you are using the style module outside of a component, you will need to add <
      };
      anchors.add('h2, h3');
 
-     /* interact('.docs-resize')
-      *   .resizable({
-      *     edges: {
-      *       left: '.c-resize--left',
-      *       right: '.c-resize--right',
-      *       bottom: false,
-      *       top: false
-      *     },
-      *     onmove: function (e) {
-      *       var width = e.rect.width,
-      *         windowWidth = $(window).width();
-
-      *       if (width < 160) {
-      *         width = 160;
-      *       } else if ((width * 2) + 100 > windowWidth) {
-      *         width = (windowWidth - 100) / 2;
-      *       }
-
-      *       $('.docs-example').find('docs-resize').addClass('resize-overlay');
-      *       $('.docs-resize').style.width = (width * 2) + 'px';
-      *     },
-      *     onend: function () {
-      *       $('.docs-example').find('docs-resize').removeClass('resize-overlay');
-      *     }
-      *   })
-      *   .on('resizemove', function (event) {
-      *     var target = event.target,
-      *         x = (parseFloat(target.getAttribute('data-x')) || 0);
-
-      *     // update the element's style
-      *     target.style.width  = event.rect.width + 'px';
-
-      *     // translate when resizing from top or left edges
-      *     x += event.deltaRect.left;
-
-      *     target.style.webkitTransform = target.style.transform =
-      *       'translateX(' + x + 'px)';
-
-      *     target.setAttribute('data-x', x);
-      *     target.textContent = Math.round(event.rect.width);
-      *   });*/
     </script>
     
   

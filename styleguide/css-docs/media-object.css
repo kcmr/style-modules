@@ -90,7 +90,11 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 
 /* Default: horizonal media + body */
 .media-object, [class*="media-object--"] {
+  --grid-gap-size: 8px;
+  --media-object-spacing: calc(2 * var(--grid-gap-size));
+
   display: -ms-flexbox;
+
   display: flex;
   box-sizing: border-box;
   -ms-flex-align: start;
@@ -111,7 +115,7 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 }
 
 .media-object__media {
-  margin-right: calc(2 * 8px);
+  margin-right: var(--media-object-spacing);
 }
 
 .media-object__body {
@@ -126,7 +130,7 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 
 .media-object--reverse .media-object__media {
   margin-right: 0;
-  margin-left: calc(2 * 8px);
+  margin-left: var(--media-object-spacing);
 }
 
 .media-object--vertical {
@@ -137,7 +141,7 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 .media-object--vertical .media-object__media {
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: calc(2 * 8px);
+  margin-bottom: var(--media-object-spacing);
 }
 
 .media-object--vertical.media-object--reverse {
@@ -148,7 +152,7 @@ The modifier class `media-object--center` can be used in horizontal or vertical 
 .media-object--vertical.media-object--reverse .media-object__media {
   margin-right: 0;
   margin-bottom: 0;
-  margin-top: calc(2 * 8px);
+  margin-top: var(--media-object-spacing);
 }
 
 .media-object--center {

@@ -117,8 +117,6 @@ examples.lang = {
 
 		idoc.write(html);
 
-		idoc.close();
-
 		// add default block styles to iframe dom
 		iwin.addEventListener('load', function(){
 			idoc.documentElement.setAttribute('style', examples.htmlcss);
@@ -126,26 +124,7 @@ examples.lang = {
       iframe.setAttribute('class', 'docs-iframe clearfix');
 		});
 
-		if (conf.width) style.width = String(conf.width);
+		idoc.close();
 
-		// set iframe height based on content
-		var documentElement = idoc.documentElement;
-		var scrollHeight;
-
-		function resize() {
-			var currentScrollHeight = documentElement.scrollHeight;
-
-			if (scrollHeight !== currentScrollHeight) {
-				scrollHeight = currentScrollHeight;
-
-				style.height = 0;
-
-				style.height = documentElement.scrollHeight + (iframe.offsetHeight - iwin.innerHeight) + 'px';
-			}
-		}
-
-    iwin.addEventListener('load', function () {
-      resize();
-    });
 	}
 };
