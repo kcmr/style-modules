@@ -1,20 +1,22 @@
-var gulp = require('gulp');
-var browserSync = require('browser-sync');
-var postcss = require('gulp-postcss');
-var processInline = require('gulp-process-inline');
-var inlineSource = require('gulp-inline-source');
-var htmlmin = require('gulp-htmlmin');
-var eslint = require('gulp-eslint');
-var autoprefixer = require('autoprefixer');
-var minify = require('gulp-htmlmin');
-var argv = require('yargs').argv;
-var rename = require('gulp-rename');
+'use strict';
 
-gulp.task('build', function() {
-  var styles = processInline();
-  var scripts = processInline();
+const gulp = require('gulp');
+const browserSync = require('browser-sync');
+const postcss = require('gulp-postcss');
+const processInline = require('gulp-process-inline');
+const customMedia = require('postcss-custom-media');
+const inlineSource = require('gulp-inline-source');
+const htmlmin = require('gulp-htmlmin');
+const eslint = require('gulp-eslint');
+const autoprefixer = require('autoprefixer');
+const minify = require('gulp-htmlmin');
+const argv = require('yargs').argv;
+const rename = require('gulp-rename');
 
-  var debug = (argv.debug === undefined) ? false : true;
+gulp.task('build', () => {
+  const styles = processInline();
+  const scripts = processInline();
+  const debug = (argv.debug === undefined) ? false : true;
 
   return gulp.src(['src/*.html'])
     .pipe(inlineSource({
@@ -33,12 +35,18 @@ gulp.task('build', function() {
     .pipe(postcss([
       require('precss')({}),
       require('mdcss')({
-        examples: { css: ['css-docs/media-object.css'] }
+        color: '#607D8B',
+        polymerTheme: 'default-theme.html',
+        examples: {
+          css: ['css-docs/media-object.css'],
+          bodycss: 'font-family: sans-serif; font-size: 14px;'
+        }
       }),
       autoprefixer({
         browsers: ['last 2 versions'],
         cascade: false
-      })
+      }),
+      customMedia()
     ]))
     .pipe(rename(function(path) {
       path.extname = '.css'
@@ -62,7 +70,7 @@ gulp.task('build', function() {
     .pipe(gulp.dest('.'));
 });
 
-gulp.task('browserSync', function() {
+gulp.task('browserSync', () => {
   browserSync({
     server: {
       baseDir: './',
@@ -77,7 +85,7 @@ gulp.task('browserSync', function() {
   });
 });
 
-gulp.task('watch', function() {
+gulp.task('watch', () => {
   gulp.watch(['src/**/*', 'demo/**/*', 'test/**/*'], ['build', browserSync.reload]);
 });
 
